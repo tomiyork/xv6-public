@@ -1,0 +1,16 @@
+language: c
+script: make
+language: c
+script: make && make fs.img
+deploy:
+  provider: releases
+  api_key:
+    secure: uKL+CwExHhbCX41tYkrUPlQfC6a47FUchQZpJzwltUYXsSy9LZCcuE7p0RcRpwlIFcni60bqWtTsmN0uDyOSowpr5REAaaz6y9jANf6ne8cUxc2ex+VbdMT6b7lIR9ntfpOvJPzEtA16ZlAoktrXdmDO6vgG4QwGCoCQTzGOyCxDJmfRuIuMMsN/omIIUuw7v2PoorBGImz+RB2h1YaPjSHOCbJqu0Go/HU1ZvIZhO1+e8sRtbV/P8Ul6pun9063JGSv0TnJr3T0uw9U69w7seYbJA53lyTpx1GAdQEhqH1sgIeYPAANM8C/XSzRa71CYNXwQdlBxWeez1GtQzl0PdNA1kfQawLcbfZILoPn7Fe7ge+cEr+SEsttzCowv9CrhThhw5ao/OXAnWF9lAOepqzGO+v1cqCVLvyof2yd4rBYYg3HHLk7cd4/PSbNS7MxTV3x6mkFo7IcnMaLMPb6HFZzA6XM3vlkeWU0qH+mQn/PVjR6ODVXIjBJnVj5WXZRkJMrvHvDSnykF6ZkYdFGOZJCBK7tfpPUCEaqL0yjf/hC4vVWOoEd6UUXkQYYM14qZpAz+uM7ecu49UdgZg77fIbFbjFRYmN7LIfOHdmGmcYNprwLN0hfFMvfrwoTyS+Q3g6zT6v2woGgP7IgSEUdHVJfC3anrRqjrz2wYL7dTuo=
+  file:
+- fs.img
+- xv6.img
+skip_cleanup: true
+  on:
+    repo: tomiyork/xv6-public
+    branch: project_1
+tags: true
